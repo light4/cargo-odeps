@@ -1,0 +1,28 @@
+[package]
+name = "cargo-deps"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cargo_metadata = "0.15"
+clap = { version = "4.3", default-features = false, features = [
+    "std",
+    "help",
+    "usage",
+    "derive",
+    "error-context",
+] }
+color-eyre = "0.6"
+json = "0.12"
+semver = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+ureq = "2.6"
+xshell = "0.2"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = "debuginfo"
