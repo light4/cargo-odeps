@@ -1,13 +1,13 @@
 [package]
-name = "cargo-deps"
+name = "cargo-odeps"
 version = "0.1.1"
 authors = ["root@i01.io"]
 categories = ["development-tools::cargo-plugins"]
 description = "Easy manage programs installed by `cargo install`."
-documentation = "https://github.com/light4/cargo-deps"
-keywords = ["cargo", "deps", "subcommand"]
+documentation = "https://github.com/light4/cargo-odeps"
+keywords = ["cargo", "odeps", "subcommand"]
 license = "Apache-2.0/MIT"
-repository = "https://github.com/light4/cargo-deps"
+repository = "https://github.com/light4/cargo-odeps"
 edition = "2021"
 
 [dependencies]

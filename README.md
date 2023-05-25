@@ -1,27 +1,27 @@
 # cargo-deps
 
-Easy manage rust crate deps by `cargo deps`.
+Easy manage rust crate deps by `cargo odeps`.
 
-[![CI](https://github.com/light4/cargo-deps/actions/workflows/test.yaml/badge.svg)](https://github.com/light4/cargo-deps/actions/workflows/test.yaml)
-[![build-and-release](https://github.com/light4/cargo-deps/actions/workflows/build-and-release.yaml/badge.svg)](https://github.com/light4/cargo-deps/actions/workflows/build-and-release.yaml)
+[![CI](https://github.com/light4/cargo-odeps/actions/workflows/test.yaml/badge.svg)](https://github.com/light4/cargo-odeps/actions/workflows/test.yaml)
+[![build-and-release](https://github.com/light4/cargo-odeps/actions/workflows/build-and-release.yaml/badge.svg)](https://github.com/light4/cargo-odeps/actions/workflows/build-and-release.yaml)
 
 ## Install
 
 ```bash
 # from crates.io
-cargo install cargo-deps --force
+cargo install cargo-odeps --force
 # from git repo
-cargo install --git https://github.com/light4/cargo-deps.git --force
+cargo install --git https://github.com/light4/cargo-odeps.git --force
 ```
 
 ## Usage
 
 ```bash
 ~ on  master 🕙 22:28:47
-❯ cargo deps --help
-Easy manage rust crate deps by `cargo deps`
+❯ cargo odeps --help
+Easy manage rust crate deps by `cargo odeps`
 
-Usage: cargo deps [OPTIONS]
+Usage: cargo odeps [OPTIONS]
 
 Options:
   -u, --upgrade          upgrade all outdated

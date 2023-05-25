@@ -1,12 +1,12 @@
-//! Handle `cargo deps` arguments
+//! Handle `cargo odeps` arguments
 use clap::Parser;
 
 #[derive(Debug, Parser)]
 #[command(bin_name = "cargo")]
 pub enum Command {
-    /// Easy manage rust crate deps by `cargo deps`.
-    #[command(name = "deps")]
-    Deps(Args),
+    /// Easy manage rust crate deps by `cargo odeps`.
+    #[command(name = "odeps")]
+    ODeps(Args),
 }
 
 #[derive(Debug, Default, Parser)]

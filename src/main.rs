@@ -13,11 +13,11 @@ mod args;
 mod crates;
 
 fn main() -> Result<()> {
-    let Command::Deps(args) = Command::parse();
+    let Command::ODeps(args) = Command::parse();
     let filter = if args.verbose {
-        "cargo_deps=debug,ureq=info"
+        "cargo_odeps=debug,ureq=info"
     } else {
-        "cargo_deps=info,ureq=error"
+        "cargo_odeps=info,ureq=error"
     };
 
     tracing_subscriber::registry()
