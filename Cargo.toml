@@ -1,12 +1,16 @@
 [package]
 name = "cargo-deps"
-version = "0.1.0"
+version = "0.1.1"
+authors = ["root@i01.io"]
+categories = ["development-tools::cargo-plugins"]
+description = "Easy manage programs installed by `cargo install`."
+documentation = "https://github.com/light4/cargo-deps"
+keywords = ["cargo", "deps", "subcommand"]
+license = "Apache-2.0/MIT"
+repository = "https://github.com/light4/cargo-deps"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-cargo_metadata = "0.15"
 clap = { version = "4.3", default-features = false, features = [
     "std",
     "help",
