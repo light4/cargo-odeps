@@ -1,4 +1,4 @@
-# cargo-deps
+# cargo-odeps
 
 Easy manage rust crate deps by `cargo odeps`.
 

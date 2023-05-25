@@ -88,12 +88,12 @@ jobs:
       - name: Move binaries
         run: |
           mkdir artifacts/
-          mv target/${{ matrix.target }}/release/cargo-deps${{ matrix.file-ext }} artifacts/cargo-deps-${{ steps.tag.outputs.tag }}-${{ matrix.arch-name }}${{ matrix.file-ext }}
+          mv target/${{ matrix.target }}/release/cargo-odeps${{ matrix.file-ext }} artifacts/cargo-odeps-${{ steps.tag.outputs.tag }}-${{ matrix.arch-name }}${{ matrix.file-ext }}
 
       - name: Calculate SHA256
         run: |
           cd artifacts/
-          openssl dgst -sha256 -r cargo-deps-${{ steps.tag.outputs.tag }}-${{ matrix.arch-name }}${{ matrix.file-ext }} > cargo-deps-${{ steps.tag.outputs.tag }}-${{ matrix.arch-name }}${{ matrix.file-ext }}.sha256sum
+          openssl dgst -sha256 -r cargo-odeps-${{ steps.tag.outputs.tag }}-${{ matrix.arch-name }}${{ matrix.file-ext }} > cargo-odeps-${{ steps.tag.outputs.tag }}-${{ matrix.arch-name }}${{ matrix.file-ext }}.sha256sum
 
       - name: Release binaries
         uses: ncipollo/release-action@v1

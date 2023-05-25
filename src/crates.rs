@@ -181,10 +181,7 @@ pub fn print_krates(krates: &[Krate], outdated_only: bool) {
     if outdated_only {
         println!("{:18} {:14} {:14}", "Name", "Dep", "Latest");
     } else {
-        println!(
-            "{:18} {:14} {:14} {:8}",
-            "Name", "Dep", "Latest", "Status"
-        );
+        println!("{:18} {:14} {:14} {:8}", "Name", "Dep", "Latest", "Status");
     }
     for k in krates {
         if outdated_only {
