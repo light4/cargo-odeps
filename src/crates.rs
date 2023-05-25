@@ -103,11 +103,7 @@ pub fn get_deps() -> Result<Vec<DepKrate>> {
                 version: splited[2].trim_matches('v').to_string(),
                 from: dep_from,
             };
-            if d.version.is_empty() {
-                None
-            } else {
-                Some(d)
-            }
+            if d.version.is_empty() { None } else { Some(d) }
         })
         .collect();
 
