@@ -90,7 +90,7 @@ pub fn get_deps() -> Result<Vec<DepKrate>> {
     let result = output
         .lines()
         .skip(1)
-        .map(|line| {
+        .filter_map(|line| {
             let splited: Vec<&str> = line.trim().split(' ').collect();
             let dep_from = if splited.len() >= 4 {
                 let parn: &[_] = &['(', ')'];
@@ -98,10 +98,15 @@ pub fn get_deps() -> Result<Vec<DepKrate>> {
             } else {
                 None
             };
-            DepKrate {
+            let d = DepKrate {
                 name: splited[1].to_string(),
                 version: splited[2].trim_matches('v').to_string(),
                 from: dep_from,
+            };
+            if d.version.is_empty() {
+                None
+            } else {
+                Some(d)
             }
         })
         .collect();
