@@ -1,6 +1,6 @@
 [package]
 name = "cargo-odeps"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["root@i01.io"]
 categories = ["development-tools::cargo-plugins"]
 description = "Easy manage rust crate deps by `cargo odeps`."
