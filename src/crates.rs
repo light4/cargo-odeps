@@ -140,7 +140,7 @@ impl Krate {
         }
         let sh = Shell::new()?;
         let name = self.name();
-        let version = self.version();
+        let version = &self.latest;
         cmd!(sh, "cargo add {name}@{version}").run()?;
 
         Ok(())
