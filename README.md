@@ -24,10 +24,11 @@ Easy manage rust crate deps by `cargo odeps`
 Usage: cargo odeps [OPTIONS]
 
 Options:
-  -u, --upgrade          upgrade all outdated
-  -o, --outdated         show outdated
-  -l, --no-ignore-local  don't ignore deps from local space
-  -i, --ignore <IGNORE>  ignore from upgrade
-  -v, --verbose          show details
-  -h, --help             Print help
+  -u, --upgrade            upgrade all outdated
+  -o, --outdated           show outdated
+  -l, --no-ignore-local    don't ignore deps from local space
+  -i, --ignore <IGNORE>    ignore from upgrade
+  -p, --project <PROJECT>  project only
+  -v, --verbose            show details
+  -h, --help               Print help
 ```
