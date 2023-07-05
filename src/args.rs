@@ -27,6 +27,10 @@ pub struct Args {
     #[arg(short, long)]
     pub ignore: Vec<String>,
 
+    /// project only
+    #[arg(short, long)]
+    pub project: Option<String>,
+
     /// show details
     #[arg(short, long)]
     pub verbose: bool,

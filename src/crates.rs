@@ -82,11 +82,16 @@ fn get_crate_versions(krate: &str) -> Result<String> {
     Ok(body)
 }
 
-pub fn get_deps() -> Result<Vec<DepKrate>> {
+pub fn get_deps(project: Option<String>) -> Result<Vec<DepKrate>> {
     let sh = Shell::new()?;
-    debug!("running: cargo tree --depth 1");
-    let output = cmd!(sh, "cargo tree --depth 1").read()?;
-    debug!("cargo tree --depth 1 output:\n {}", &output);
+    let command = if let Some(p) = project {
+        cmd!(sh, "cargo tree -p {p} --depth 1")
+    } else {
+        cmd!(sh, "cargo tree --depth 1")
+    };
+    debug!("running: {}", &command);
+    let output = command.read()?;
+    debug!("{} output:\n {}", &command, &output);
     let result = output
         .lines()
         .skip(1)
@@ -147,9 +152,13 @@ impl Krate {
     }
 }
 
-pub fn get_all_krates(ignored: &[String], ignore_local: bool) -> Result<Vec<Krate>> {
+pub fn get_all_krates(
+    ignored: &[String],
+    ignore_local: bool,
+    project: Option<String>,
+) -> Result<Vec<Krate>> {
     let mut result = vec![];
-    let deps = get_deps()?;
+    let deps = get_deps(project)?;
 
     for i in &deps {
         let (latest, status) = if ignored.contains(&i.name) || (ignore_local && i.is_local()) {

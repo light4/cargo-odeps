@@ -30,7 +30,7 @@ fn main() -> Result<()> {
     debug!(?args);
 
     let ignore_local = !args.no_ignore_local;
-    let krates = get_all_krates(&args.ignore, ignore_local)?;
+    let krates = get_all_krates(&args.ignore, ignore_local, args.project)?;
     print_krates(&krates, args.outdated);
     if args.upgrade {
         upgrade_krates(&krates, &args.ignore, ignore_local)?;
