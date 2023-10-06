@@ -1,6 +1,6 @@
 [package]
 name = "cargo-odeps"
-version = "0.1.8"
+version = "0.2.0"
 authors = ["root@i01.io"]
 categories = ["development-tools::cargo-plugins"]
 description = "Easy manage rust crate deps by `cargo odeps`."
@@ -11,7 +11,7 @@ repository = "https://github.com/light4/cargo-odeps"
 edition = "2021"
 
 [dependencies]
-clap = { version = "4.3", default-features = false, features = [
+clap = { version = "4.4", default-features = false, features = [
     "std",
     "help",
     "usage",
@@ -21,9 +21,10 @@ clap = { version = "4.3", default-features = false, features = [
 color-eyre = "0.6"
 json = "0.12"
 semver = "1.0"
+std = { version = "0.16", package = "eyra" }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-ureq = "2.7"
+ureq = "2.8"
 xshell = "0.2"
 
 [profile.release]
